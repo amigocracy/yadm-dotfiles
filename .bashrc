@@ -115,3 +115,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+#export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+
+#GPG Agent stuff
+if [ ! -f /tmp/gpg-agent.env ]; then
+    killall gpg-agent;
+    eval $(gpg-agent --daemon --enable-ssh-support > /tmp/gpg-agent.env);
+fi
+. /tmp/gpg-agent.env

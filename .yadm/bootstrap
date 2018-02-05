@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo apt-get install -y zsh zsh-antigen gnupg2 gnupg-agent pinentry-curses scdaemon pcscd yubikey-personalization libusb-1.0-0-dev
+ 
